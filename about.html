@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Beautiful Responsive Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .container h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .navigation {
+            background-color: #333;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        li {
+            margin: 0 20px;
+            transition: transform 0.3s;
+        }
+        
+        li:hover {
+            transform: translateY(-3px);
+        }
+        
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        a:hover {
+            color: #ffaf7b;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .active {
+            color: #ffaf7b;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .about-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .about-section h2 {
+            color: #3a1c71;
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-bottom: 2px solid #d76d77;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .about-section p {
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-info h3 {
+            color: #3a1c71;
+            margin-bottom: 5px;
+        }
+        
+        .team-info p.role {
+            color: #d76d77;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .team-info p.bio {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .footer {
+            background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+            width: 100%;
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container h1 {
+                font-size: 1.8rem;
+            }
+            
+            ul {
+                flex-wrap: wrap;
+            }
+            
+            li {
+                margin: 5px 10px;
+            }
+            
+            .team-section {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <div class="container">
+        <h1>About Us</h1>
+    </div>
+    
+    <!-- navigation bar -->
+    <div class="navigation">
+        <ul>
+            <li><a href="website layout.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="services.html">Appointment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- main content -->
+    <div class="content-wrapper">
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>Founded in 2010, our company has been dedicated to providing exceptional services to our clients. We believe in quality, innovation, and customer satisfaction. Our journey began with a simple idea - to create something meaningful that adds value to people's lives.</p>
+            
+            <p>Over the years, we have grown from a small startup to a recognized brand in the industry. Our commitment to excellence and continuous improvement has helped us build strong relationships with our clients and partners.</p>
+            
+            <p>Today, we are proud to be serving clients worldwide, helping them achieve their goals through our expertise and dedication. Our team of professionals works tirelessly to ensure that every project we undertake is completed to the highest standards.</p>
+            
+            <h2>Our Mission</h2>
+            <p>Our mission is to deliver innovative solutions that empower our clients to succeed in their endeavors. We strive to exceed expectations and create lasting value through our services.</p>
+            
+            <h2>Our Vision</h2>
+            <p>To be the leading provider of creative solutions, recognized for our excellence, integrity, and commitment to customer satisfaction.</p>
+        </div>
+        
+        <h2 style="text-align: center; color: #3a1c71; margin: 40px 0 20px;">Meet Our Team</h2>
+        
+        <div class="team-section">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Team Member">
+                <div class="team-info">
+                    <h3>John Doe</h3>
+                    <p class="role">CEO & Founder</p>
+                    <p class="bio">With over 15 years of industry experience, John leads our company with vision and passion.</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80" alt="Team Member">
+                <div class="team-info">
+                    <h3>Jane Smith</h3>
+                    <p class="role">Creative Director</p>
+                    <p class="bio">Jane brings creativity and innovation to every project, ensuring unique and impactful results.</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Team Member">
+                <div class="team-info">
+                    <h3>Michael Brown</h3>
+                    <p class="role">Technical Lead</p>
+                    <p class="bio">Michael's technical expertise and problem-solving skills drive our technological advancements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer section -->
+    <div class="footer">
+        <p>&copy; 2023 Beautiful Responsive Layout. All rights reserved. Designed with passion and care.</p>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment - Beautiful Responsive Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .container h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .navigation {
+            background-color: #333;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        li {
+            margin: 0 20px;
+            transition: transform 0.3s;
+        }
+        
+        li:hover {
+            transform: translateY(-3px);
+        }
+        
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        a:hover {
+            color: #ffaf7b;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .active {
+            color: #ffaf7b;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .content-wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .appointment-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .appointment-section h2 {
+            color: #3a1c71;
+            margin-bottom: 25px;
+            font-size: 28px;
+            text-align: center;
+            border-bottom: 2px solid #d76d77;
+            padding-bottom: 15px;
+        }
+        
+        .appointment-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .appointment-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #d76d77;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(215, 109, 119, 0.2);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px top 50%;
+            background-size: 12px auto;
+            padding-right: 30px;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, #3a1c71, #d76d77);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+            margin: 30px auto 0;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(215, 109, 119, 0.4);
+        }
+        
+        .appointment-info {
+            margin-top: 40px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #3a1c71;
+        }
+        
+        .appointment-info h3 {
+            color: #3a1c71;
+            margin-bottom: 15px;
+        }
+        
+        .appointment-info ul {
+            display: block;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        
+        .appointment-info li {
+            margin: 10px 0;
+            color: #555;
+            display: list-item;
+            transform: none;
+        }
+        
+        .footer {
+            background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+            width: 100%;
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container h1 {
+                font-size: 1.8rem;
+            }
+            
+            ul {
+                flex-wrap: wrap;
+            }
+            
+            li {
+                margin: 5px 10px;
+            }
+            
+            .appointment-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <div class="container">
+        <h1>Book an Appointment</h1>
+    </div>
+    
+    <!-- navigation bar -->
+    <div class="navigation">
+        <ul>
+            <li><a href="website layout.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Appointment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- main content -->
+    <div class="content-wrapper">
+        <div class="appointment-section">
+            <h2>Schedule a Meeting</h2>
+            <p>Fill out the form below to schedule a personal meeting. I'll get back to you within 24 hours to confirm your appointment.</p>
+            
+            <form class="appointment-form" action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" class="form-control" required min="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <select id="time" name="time" class="form-control" required>
+                            <option value="">Select a time</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meeting-type">Meeting Type</label>
+                        <select id="meeting-type" name="meeting-type" class="form-control" required>
+                            <option value="">Select meeting type</option>
+                            <option value="Initial Consultation">Initial Consultation</option>
+                            <option value="Project Discussion">Project Discussion</option>
+                            <option value="Follow-up Meeting">Follow-up Meeting</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Please provide any additional details about the meeting..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Request Appointment</button>
+            </form>
+            
+            <div class="appointment-info">
+                <h3>Important Information</h3>
+                <ul>
+                    <li>Appointments are subject to availability and confirmation.</li>
+                    <li>Please arrive 10 minutes before your scheduled appointment time.</li>
+                    <li>If you need to reschedule, please provide at least 24 hours notice.</li>
+                    <li>Virtual meetings are available upon request.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer section -->
+    <div class="footer">
+        <p>&copy; 2023 Beautiful Responsive Layout. All rights reserved. Designed with passion and care.</p>
+    </div>
+</body>
+</html> 
